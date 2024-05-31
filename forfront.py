@@ -19,7 +19,7 @@ def generate_signal():
     x, y = np.meshgrid(np.linspace(x_min, x_max, resolution), 
                        np.linspace(y_min, y_max, resolution))
     power = np.sqrt(x**2 + y**2)
-    cmap = LinearSegmentedColormap.from_list('custom', [(0, 'red'), (0.5, 'yellow'), (1, 'green')])
+    cmap = LinearSegmentedColormap.from_list('custom', [(0, 'green'), (0.5, 'yellow'), (1, 'red')])
     
     fig, ax = plt.subplots(figsize=(10, 10), dpi=100)
     contour = ax.contourf(x, y, power, levels=20, cmap=cmap, alpha=0.5)
