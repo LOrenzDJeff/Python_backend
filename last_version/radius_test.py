@@ -20,7 +20,7 @@ n = 2
 rsrp = initial_rsrp - 10 * n * np.log10(distance + 1e-6)
 
 # Создаем пользовательскую цветовую карту
-cmap = LinearSegmentedColormap.from_list('custom', [(0, 'green'), (0.5, 'yellow'), (1, 'red')])
+cmap = LinearSegmentedColormap.from_list('custom', [(0, 'red'), (0.5, 'yellow'), (1, 'green')])
 
 # Создаем фигуру и оси
 fig, ax = plt.subplots(figsize=(4, 4), dpi=100)
