@@ -31,6 +31,5 @@ if closest_pair:
     midy = (closest_pair[0].y + closest_pair[1].y) / 2
     lat, lon = m_to_grad(midx, midy, Novlon, Novlat)
 
-    # Отправляем результаты обратно на сервер Go
     result = {"latitude": lat, "longitude": lon}
     send_to_go(result)
