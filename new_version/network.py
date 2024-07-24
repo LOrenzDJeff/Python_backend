@@ -1,5 +1,5 @@
-import socket
 import json
+import socket
 
 def from_go(host='localhost', port=65432):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -16,7 +16,7 @@ def from_go(host='localhost', port=65432):
                 if not packet:
                     break
                 data += packet
-            
+
             try:
                 characteristics = json.loads(data.decode('utf-8'))
                 print("Received characteristics:", characteristics)
@@ -27,11 +27,11 @@ def from_go(host='localhost', port=65432):
             except json.JSONDecodeError as e:
                 print("Failed to decode JSON:", e)
 
-def send_to_client(data, addr, host='localhost', port=65432):
+def send_to_go(data, host='localhost', port=65433):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
         try:
             s.sendall(json.dumps(data).encode('utf-8'))
-            print(f"Data sent to {addr}: {data}")
-        except socket.error as e:
-            print(f"Failed to send data: {e}")
+            print("Data sent to Go server:", data)
+        except Exception as e:
+            print("Failed to send data:", e)
