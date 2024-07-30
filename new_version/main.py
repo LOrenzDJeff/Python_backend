@@ -6,7 +6,7 @@ from network import from_go, send_to_go
 Novlon = 82.946912
 Novlat = 55.010810
 
-char, addr = from_go()
+char = from_go()
 
 circles = []
 print(char)

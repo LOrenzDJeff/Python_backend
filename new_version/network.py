@@ -23,7 +23,7 @@ def from_go(host='localhost', port=65432):
                 list_of_dicts = []
                 for item in characteristics:
                     list_of_dicts.append([item['latitude'], item['longitude'], item['rsrp']])
-                return list_of_dicts, addr
+                return list_of_dicts
             except json.JSONDecodeError as e:
                 print("Failed to decode JSON:", e)
 
