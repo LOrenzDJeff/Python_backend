@@ -3,8 +3,8 @@ from plot import plot_circles_and_intersections
 from utils import m_to_grad
 from network import from_go, send_to_go
 
-Novlon = 82.946912
-Novlat = 55.010810
+Novlon = 82.71194
+Novlat = 54.78564
 
 char = from_go()
 
@@ -28,7 +28,7 @@ plot_circles_and_intersections(circles, intersections, closest_pair)
 
 if closest_pair:
     midx = (closest_pair[0].x + closest_pair[1].x) / 2
-    midy = (closest_pair[0].y + closest_pair[1].y) / 2
+    midy = (closest_pair[0].y + closest_pair[1].y) / 2      
     lat, lon = m_to_grad(midx, midy, Novlon, Novlat)
 
     result = {"latitude": lat, "longitude": lon}

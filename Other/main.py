@@ -8,7 +8,8 @@ def search():
 
     list_of_dicts = []
     for item in data:
-        list_of_dicts.append([item['latitude'], item['longitude'], item['rsrp']])
+        if item['cellID'] == '139956839':
+            list_of_dicts.append([float(item['latitude']), float(item['longitude']), int(item['rsrp'])])
     return list_of_dicts
 
         
